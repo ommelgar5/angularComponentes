@@ -1,0 +1,37 @@
+
+
+<!-- <some-element [ngClass]="{'class1 class2 class3' : true}">...</some-element> -->
+<!-- <some-element [ngClass]="['first', 'second']">...</some-element> -->
+
+<!-- <div  [ngClass]="'alert-danger'" class="alert" role="alert"> -->
+<!-- <div  [ngClass]="['alert-info']" class="alert" role="alert"> -->
+
+<div  [ngClass]="alerta" class="alert" role="alert">
+  <Strong>Well done!</Strong> A simple primary alert—check it out!
+</div>
+<button class="btn btn-info me-1" (click)="alerta = 'alert-info'">info</button>
+<button class="btn btn-success" (click)="alerta = 'alert-success'">success</button>
+
+<br><br>
+
+<h3 [ngClass]=" { 'text-danger' : propiedades.danger , 'text-info': !propiedades.danger}"
+                (click)="propiedades.danger = !propiedades.danger">
+  Hola mundo!!!
+</h3>
+
+<button class="btn"
+        (click)="propiedades.danger = !propiedades.danger"
+        [ngClass]="{'btn-danger' : propiedades.danger , 'btn-info': !propiedades.danger }"
+        >Cabirar
+</button>
+
+<br><br>
+
+<button class="btn btn-primary"
+        (click)="ejecutar()"
+        [disabled]="loading">
+  <i  [ngClass]="{ 'fa-save': !loading, 'fa-sync fa-spin': loading }" class="fa"></i>
+  <span *ngIf="!loading" class="ms-1">Guardar cambios</span>
+  <span *ngIf="loading" class="ms-1">Espere por favor</span>
+</button>
+
